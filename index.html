@@ -15,7 +15,7 @@
   ■ 本文の正本＝Doc「【案】ドリル申込ページ 深くした版（一度落ちた人へ）2026-11-01」1mpMO8ULRYlAfaj7PDYW4WFvb4IwEdHmI2U04ImiDQ-A（本人の直接修正が最終）
   ■ 置き場所（この3つを本番値に置き換える。新しいリンクはここでは作っていない）
      {{GAS_EXEC_URL}}   … 受付GAS（automation/gas_drill_apply.gs・申込記録／hi@への通知／銀行振込の自動返信）の /exec URL
-     {{STRIPE_JP_87}} {{PAYPAL_JP_87}}  … 日本在住 €87（税10%込み・2026-11-02本人決定）＝佳代子さんが作り直し中
+     日本在住 €87（税10%込み・2026-11-02本人決定）＝佳代子さん作成のリンクを11/2夜に入れ済み（Stripe・PayPalとも€87を確認）
      {{STRIPE_EU_94}} {{PAYPAL_EU_94}}  … 欧州在住 €94
   ■ 計測（常時インサイト）: view / cta(ボタン別) / form_start / scroll25・50・75・90 / 申込。?src=○○で流入元。自分の確認は ?src=me
      申込には「最後に押した申込ボタン（entry）」と「支払いボタン（cta）」の両方を記録する。個人が分かる情報は計測に送らない
@@ -870,7 +870,7 @@
   /* ▼ 置き場所：公開前に本番値へ（このファイルでは新しいリンクを作らない） */
   var GAS_URL = "{{GAS_EXEC_URL}}";
   var PAY_LINKS = {
-    JP: { Stripe: "{{STRIPE_JP_87}}", PayPal: "{{PAYPAL_JP_87}}" },
+    JP: { Stripe: "https://buy.stripe.com/4gM28sfr58YI39L7YL1kA1n", PayPal: "https://www.paypal.com/ncp/payment/7K4GKVDD53282" },
     EU: { Stripe: "https://buy.stripe.com/00w9AUdiX1wgaCdcf11kA1m", PayPal: "https://www.paypal.com/ncp/payment/R22726TTUCZUQ" }
   };
   function isReal(u){ return typeof u === "string" && u.indexOf("http") === 0; }
