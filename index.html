@@ -14,7 +14,7 @@
   ■ 申込ページ（受験対策ドリル・既存生向け）  作成: 2026-10-31／2026-11-01夜 デザイン作り直し（本人「写真・箇条書き・ハイライト・背景色でメリハリ・FVをカッコよく」）
   ■ 本文の正本＝Doc「【案】ドリル申込ページ 深くした版（一度落ちた人へ）2026-11-01」1mpMO8ULRYlAfaj7PDYW4WFvb4IwEdHmI2U04ImiDQ-A（本人の直接修正が最終）
   ■ 置き場所（この3つを本番値に置き換える。新しいリンクはここでは作っていない）
-     {{GAS_EXEC_URL}}   … 受付GAS（automation/gas_drill_apply.gs・申込記録／hi@への通知／銀行振込の自動返信）の /exec URL
+     受付GAS（11/3設置済み・https://script.google.com/macros/s/AKfycbx_zH661VTJPssyVZNmvvt2iCzvHmuYeLeee2ARXN9ZlxQ6LMxsSJltYoltGyLD8_eAZQ/exec）… 受付GAS（automation/gas_drill_apply.gs・申込記録／hi@への通知／銀行振込の自動返信）の /exec URL
      日本在住 €87（税10%込み・2026-11-02本人決定）＝佳代子さん作成のリンクを11/2夜に入れ済み（Stripe・PayPalとも€87を確認）
      {{STRIPE_EU_94}} {{PAYPAL_EU_94}}  … 欧州在住 €94
   ■ 計測（常時インサイト）: view / cta(ボタン別) / form_start / scroll25・50・75・90 / 申込。?src=○○で流入元。自分の確認は ?src=me
@@ -828,12 +828,10 @@
         <textarea id="fAddress" name="address" autocomplete="street-address" rows="2" required></textarea>
         <div class="hint">郵便番号から、国名までご記入ください。</div>
       </div>
-      <!-- 準備中（本人確認用の公開）：お支払いリンクと受付の仕組みを入れたら、この注意書きと disabled を外す -->
-      <div class="prep">準備中のため、お申し込みはまだ受け付けていません。</div>
       <div class="pays">
-        <button type="submit" class="pay stripe" data-method="Stripe" data-cta="pay-stripe" disabled>Stripeで支払う（準備中）</button>
-        <button type="submit" class="pay paypal" data-method="PayPal" data-cta="pay-paypal" disabled>PayPalで支払う（準備中）</button>
-        <button type="submit" class="pay bank" data-method="銀行振込" data-cta="pay-bank" disabled>銀行振込で申し込む（準備中）</button>
+        <button type="submit" class="pay stripe" data-method="Stripe" data-cta="pay-stripe">Stripeで支払う</button>
+        <button type="submit" class="pay paypal" data-method="PayPal" data-cta="pay-paypal">PayPalで支払う</button>
+        <button type="submit" class="pay bank" data-method="銀行振込" data-cta="pay-bank">銀行振込で申し込む</button>
       </div>
       <p style="font-size:11.5px;margin-top:10px;">※Stripe：クレジットカード　※PayPal：PayPalアカウント・Apple Pay・クレジットカード<br>※銀行振込：日本の銀行口座、またはドイツの法人口座へ。振込先はメールでご案内します。振込手数料はご負担ください。</p>
       <div class="err" id="formErr"></div>
@@ -868,7 +866,7 @@
   document.getElementById('y').textContent = new Date().getFullYear();
 
   /* ▼ 置き場所：公開前に本番値へ（このファイルでは新しいリンクを作らない） */
-  var GAS_URL = "{{GAS_EXEC_URL}}";
+  var GAS_URL = "https://script.google.com/macros/s/AKfycbx_zH661VTJPssyVZNmvvt2iCzvHmuYeLeee2ARXN9ZlxQ6LMxsSJltYoltGyLD8_eAZQ/exec";
   var PAY_LINKS = {
     JP: { Stripe: "https://buy.stripe.com/4gM28sfr58YI39L7YL1kA1n", PayPal: "https://www.paypal.com/ncp/payment/7K4GKVDD53282" },
     EU: { Stripe: "https://buy.stripe.com/00w9AUdiX1wgaCdcf11kA1m", PayPal: "https://www.paypal.com/ncp/payment/R22726TTUCZUQ" }
